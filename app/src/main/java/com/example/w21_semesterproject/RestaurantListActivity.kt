@@ -7,6 +7,7 @@ import android.widget.TextView
 import com.example.w21_semesterproject.databinding.ActivityRestaurantListBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 
 class RestaurantListActivity : AppCompatActivity() {
 
@@ -18,7 +19,9 @@ class RestaurantListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val model : RestaurantListViewModel by viewModels()
-        model.getRestaurants().observe( this, { restaurantList ->
+        // my install of android studio needs Observer<List<Restaurant>> because it won't
+        // automatically recognize the type for whatever reason
+        model.getRestaurants().observe( this, Observer<List<Restaurant>>{ restaurantList ->
             binding.linearLayout.removeAllViews()
 
             for (restaurant in restaurantList) {

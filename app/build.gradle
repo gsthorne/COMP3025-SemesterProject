@@ -52,4 +52,14 @@ dependencies {
     // required for viewmodels
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.activity:activity-ktx:1.2.0'
+
+    // recyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //this is required for using the Firebase User authentication
+    implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
+
+    // These are used for the prebuilt Firebase user login / logout features
+    implementation platform('com.google.firebase:firebase-bom:26.0.0')
+    implementation 'com.google.firebase:firebase-auth-ktx'
 }

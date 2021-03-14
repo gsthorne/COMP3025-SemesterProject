@@ -4,29 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestaurantListActivity">
+    tools:context=".RecyclerViewRestaurantListActivity">
 
     <TextView
-        android:id="@+id/headingTextView"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/restaurants_in_db"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/restaurants"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="@dimen/heading_font_size" />
+        android:textSize="@dimen/heading_font_size"/>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gridRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="36dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/headingTextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:layout_marginTop="@dimen/margin_top"/>
 
-    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
